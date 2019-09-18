@@ -1,23 +1,23 @@
 .welcome1 {
-  background: url("./welcome_1.jpg") no-repeat;
+  background: url("/welcome_1.jpg") no-repeat;
   background-position: left;
   background-size: cover;
 }
 
 .welcome2 {
-  background: url("./welcome_2.jpg") no-repeat;
+  background: url("/welcome_2.jpg") no-repeat;
   background-position: left;
   background-size: cover;
 }
 
 .welcome3 {
-  background: url("./welcome_3.jpg") no-repeat;
+  background: url("/welcome_3.jpg") no-repeat;
   background-position: left;
   background-size: cover;
 }
 
 .welcome4 {
-  background: url("./welcome_1.jpg") no-repeat;
+  background: url("/welcome_1.jpg") no-repeat;
   background-position: left;
   background-size: cover;
 }
