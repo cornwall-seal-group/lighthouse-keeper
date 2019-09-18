@@ -1,0 +1,10 @@
+.head-card {
+  border: solid 1px #999;
+  margin: 0.5rem;
+  padding: 0.5rem;
+}
+
+.head-card.selected {
+  background-color: #999;
+  color: white;
+}

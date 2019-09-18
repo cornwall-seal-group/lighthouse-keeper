@@ -1,0 +1,57 @@
+.welcome1 {
+  background: url("/welcome_1.jpg") no-repeat;
+  background-position: left;
+  background-size: cover;
+}
+
+.welcome2 {
+  background: url("/welcome_2.jpg") no-repeat;
+  background-position: left;
+  background-size: cover;
+}
+
+.welcome3 {
+  background: url("/welcome_3.jpg") no-repeat;
+  background-position: left;
+  background-size: cover;
+}
+
+.message {
+  text-align: left;
+  left: 10vw;
+  bottom: 16vh;
+  position: absolute;
+  width: 70%;
+  padding-left: 10px;
+}
+
+.message h2,
+.message p {
+  padding: 10px;
+  color: whitesmoke;
+  background-color: rgba(42, 104, 129, 0.9);
+}
+
+.btn-outline-light:hover {
+  color: whitesmoke;
+}
+.welcome-btn {
+  position: absolute;
+  border-width: 2px;
+  outline: none;
+}
+
+.welcome-skip {
+  bottom: 2%;
+  left: 9%;
+}
+
+.welcome-next {
+  bottom: 2%;
+  right: 9%;
+}
+
+.welcome-start {
+  bottom: 2%;
+  left: 22%;
+}
