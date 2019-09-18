@@ -4,28 +4,13 @@ import { Route } from "react-router-dom";
 import "./welcome.css";
 
 class Welcome extends Component {
-  slides = [
-    {
-      id: "head-right",
-      text: "Head Right",
-      img: "head-right.svg"
-    },
-    {
-      id: "bottling-right",
-      text: "Bottling Right",
-      img: "Seals_Icons-04.svg"
-    },
-    {
-      id: "lying-right",
-      text: "Lying Right",
-      img: "lying-right.svg"
-    }
-  ];
   constructor(props) {
     super(props);
     this.state = {
       screen: 1
     };
+
+    document.body.requestFullscreen();
   }
 
   selectScreen = screen => {
@@ -38,10 +23,10 @@ class Welcome extends Component {
       return (
         <div className="welcome1 h-100">
           <div class="message">
-            <h2>Welcome</h2>
+            <h2>Cornwall Seal Group Research Trust</h2>
+            <p>Help us track the seal population throughout Cornwall.</p>
             <p>
-              <b>Upload</b> your seal sightings to help support the Cornwall
-              Seal Group Research Trust.
+              <img src="" />
             </p>
           </div>
           <Route
@@ -68,6 +53,36 @@ class Welcome extends Component {
       return (
         <div className="welcome2 h-100">
           <div class="message">
+            <h2>Welcome</h2>
+            <p>
+              <b>Upload</b> your seal sightings to help support the Cornwall
+              Seal Group Research Trust.
+            </p>
+          </div>
+          <Route
+            render={({ history }) => (
+              <button
+                onClick={() => history.push("/pick-angle")}
+                className="btn-lg btn-outline-light bg-transparent welcome-btn welcome-skip"
+              >
+                SKIP
+              </button>
+            )}
+          />
+
+          <button
+            onClick={() => this.selectScreen(3)}
+            className="btn-lg btn-outline-light bg-transparent welcome-btn welcome-next"
+          >
+            NEXT
+          </button>
+        </div>
+      );
+    }
+    if (screen === 3) {
+      return (
+        <div className="welcome3 h-100">
+          <div class="message">
             <h2>Help Us</h2>
             <p>
               Raise awareness about marine life disturbance and limit the impact
@@ -86,7 +101,7 @@ class Welcome extends Component {
             )}
           />
           <button
-            onClick={() => this.selectScreen(3)}
+            onClick={() => this.selectScreen(4)}
             className="btn-lg btn-outline-light bg-transparent welcome-btn welcome-next"
           >
             NEXT
@@ -94,9 +109,9 @@ class Welcome extends Component {
         </div>
       );
     }
-    if (screen === 3) {
+    if (screen === 4) {
       return (
-        <div className="welcome3 h-100">
+        <div className="welcome4 h-100">
           <div class="message">
             <h2>Seal Identification</h2>
             <p>
