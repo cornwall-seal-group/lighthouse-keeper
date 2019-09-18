@@ -16,6 +16,12 @@
   background-size: cover;
 }
 
+.welcome4 {
+  background: url("/welcome_1.jpg") no-repeat;
+  background-position: left;
+  background-size: cover;
+}
+
 .message {
   text-align: left;
   left: 10vw;
