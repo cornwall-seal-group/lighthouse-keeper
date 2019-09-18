@@ -2,9 +2,10 @@
   border: solid 1px #999;
   margin: 0.5rem;
   padding: 0.5rem;
+  background: #eee;
 }
 
 .head-card.selected {
-  background-color: #999;
+  background-color: rgb(206, 164, 61);
   color: white;
 }

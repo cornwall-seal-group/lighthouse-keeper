@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import Footer from "../../components/footer";
-import "./upload.css";
+import "./pick-seal.css";
 
 class Upload extends Component {
   left = [
     {
-      id: "head-left",
+      id: "wet-head-left",
       text: "Head left",
       img: "head-left.svg"
     },
@@ -22,7 +22,7 @@ class Upload extends Component {
   ];
   right = [
     {
-      id: "head-right",
+      id: "wet-head-right",
       text: "Head Right",
       img: "head-right.svg"
     },

@@ -2,3 +2,10 @@
   background-color: #2a6881;
   color: white;
 }
+
+.menu-text {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+}
