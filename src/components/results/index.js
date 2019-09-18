@@ -1,33 +1,34 @@
 import React from "react";
 import { baseUrl } from "../../config.json";
+import SealPics from "../../components/seal-pics";
 
 export default class Results extends React.Component {
   render() {
-    const { results, fileName } = this.props;
+    const { results, angle } = this.props;
 
     if (Object.keys(results).length === 0) {
       return <></>;
     }
 
-    const sortedGuesses = Object.keys(results).sort(
-      (a, b) => results[b] - results[a]
+    const { matches, image } = results;
+    const formattedImage = image.replace("..", "");
+    const sortedGuesses = Object.keys(matches).sort(
+      (a, b) => matches[b] - matches[a]
     );
 
     const bestGuess = sortedGuesses[Object.keys(sortedGuesses)[0]];
 
     return (
-      <div className="border border-info p-4 m-4">
-        <h1>Best Guess</h1>
+      <div>
         <p>Our AI model predicts you've just seen:</p>
-        <h2>
-          {bestGuess.toUpperCase()}, with{" "}
-          {(results[bestGuess] * 100).toFixed(2)}% accuracy
-        </h2>
-        {/* <img
+        <h2>{bestGuess.toUpperCase()}</h2>
+        <h4>With {(matches[bestGuess] * 100).toFixed(2)}% accuracy</h4>
+        <img
           alt="Your image"
-          src={`${baseUrl}/guessed-images/${folder}/${fileName}`}
+          src={`${baseUrl}/${formattedImage}`}
           className="w-100"
-        /> */}
+        />
+        <SealPics seal={bestGuess} angle={angle} />
       </div>
     );
   }

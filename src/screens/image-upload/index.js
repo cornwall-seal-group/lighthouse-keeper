@@ -4,7 +4,7 @@ import Dropzone from "../../components/dropzone";
 import "./upload.css";
 import Progress from "../../components/progress";
 import Results from "../../components/results";
-import { Route } from "react-router-dom";
+
 import Axios from "axios";
 import { baseUrl } from "../../config.json";
 
@@ -123,47 +123,6 @@ class Upload extends Component {
     }
   }
 
-  renderActions = () => {
-    if (this.state.successfullUploaded) {
-      return (
-        <button
-          onClick={() =>
-            this.setState({
-              files: [],
-              successfullUploaded: false,
-              uploading: false
-            })
-          }
-        >
-          Clear
-        </button>
-      );
-    } else {
-      return (
-        <>
-          <Route
-            render={({ history }) => (
-              <button
-                className="btn btn-outline-info"
-                onClick={() => history.push("/")}
-              >
-                Back
-              </button>
-            )}
-          />
-          <button
-            type="button"
-            className="btn btn-info"
-            disabled={this.state.files.length < 0 || this.state.uploading}
-            onClick={this.uploadFiles}
-          >
-            Submit Image
-          </button>
-        </>
-      );
-    }
-  };
-
   render() {
     const {
       results,
@@ -175,27 +134,28 @@ class Upload extends Component {
     } = this.state;
     return (
       <>
-        <div className="container">
-          <div className="row Content">
-            <div>
-              <Dropzone
-                onFilesAdded={this.onFilesAdded}
-                disabled={uploading || successfullUploaded}
-              />
-            </div>
-            <div className="Files">
-              {files.map(file => {
-                return (
-                  <div key={file.name} className="Row">
-                    <span className="Filename">{file.name}</span>
-                    {this.renderProgress(file)}
-                  </div>
-                );
-              })}
+        {Object.keys(results).length === 0 && (
+          <div className="container">
+            <div className="Content d-flex justify-content-center">
+              <div>
+                <Dropzone
+                  onFilesAdded={this.onFilesAdded}
+                  disabled={uploading || successfullUploaded}
+                />
+              </div>
+              <div className="Files">
+                {files.map(file => {
+                  return (
+                    <div key={file.name} className="Row">
+                      <span className="Filename">{file.name}</span>
+                      {this.renderProgress(file)}
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </div>
-        </div>
-
+        )}
         {!error && uploading && (
           <div className="d-flex justify-content-center">
             <div className="spinner-border text-info" role="status">
@@ -210,13 +170,28 @@ class Upload extends Component {
           </div>
         )}
 
-        <Results results={results} fileName={fileName} />
-        <Footer
-          primaryButtonText="Submit"
-          primaryButtonClickHandler={this.uploadFiles}
-          secondaryButtonText="Back"
-          secondaryButtonLink={`/pick-angle`}
+        <Results
+          results={results}
+          fileName={fileName}
+          angle={this.props.match.params.angle}
         />
+        {Object.keys(results).length === 0 && (
+          <Footer
+            primaryButtonText="Submit"
+            primaryButtonClickHandler={this.uploadFiles}
+            secondaryButtonText="Back"
+            secondaryButtonLink={`/pick-angle`}
+          />
+        )}
+
+        {Object.keys(results).length > 0 && (
+          <Footer
+            primaryButtonText="Agree?"
+            negativeButtonText="Disagree?"
+            secondaryButtonText="Start Over"
+            secondaryButtonLink={`/pick-angle`}
+          />
+        )}
       </>
     );
   }

@@ -9,7 +9,8 @@ export default class Footer extends React.Component {
       primaryButtonLink,
       primaryButtonClickHandler,
       secondaryButtonText,
-      secondaryButtonLink
+      secondaryButtonLink,
+      negativeButtonText
     } = this.props;
 
     let primaryClasses = "";
@@ -32,6 +33,12 @@ export default class Footer extends React.Component {
                 )}
               />
             )}
+            {negativeButtonText && (
+              <button className="btn btn-lg btn-danger">
+                {negativeButtonText}
+              </button>
+            )}
+
             {primaryButtonClickHandler && (
               <button
                 className={`btn btn-lg btn-seal-primary ${primaryClasses}`}
