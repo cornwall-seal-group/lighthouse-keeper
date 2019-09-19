@@ -93,7 +93,8 @@ class Upload extends Component {
             results: response.data,
             successfullUploaded: true,
             fileName: file.name,
-            uploading: false
+            uploading: false,
+            error: null
           });
         })
         .catch(function(response) {
