@@ -41,7 +41,7 @@ export default class SealPics extends React.Component {
 
     return (
       <div className="mt-3 p-2 seal-container">
-        <h3>Similar photos of {seal.toUpperCase()}</h3>
+        <h4>Similar photos of {seal.toUpperCase()}</h4>
         <div className="container">
           <div className="row">
             {pictures.map(picture => {

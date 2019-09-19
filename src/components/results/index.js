@@ -19,14 +19,14 @@ export default class Results extends React.Component {
     const bestGuess = sortedGuesses[Object.keys(sortedGuesses)[0]];
 
     return (
-      <div>
+      <div className="h-75">
         <p>Our AI model predicts you've just seen:</p>
         <h2>{bestGuess.toUpperCase()}</h2>
         <h4>With {(matches[bestGuess] * 100).toFixed(2)}% accuracy</h4>
         <img
           alt="Your image"
           src={`${baseUrl}/${formattedImage}`}
-          className="w-100"
+          className="h-25"
         />
         <SealPics seal={bestGuess} angle={angle} />
       </div>
