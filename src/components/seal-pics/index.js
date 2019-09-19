@@ -35,6 +35,10 @@ export default class SealPics extends React.Component {
       return <></>;
     }
 
+    if (pictures.length > 6) {
+      pictures.splice(7);
+    }
+
     return (
       <div className="mt-3 p-2 seal-container">
         <h3>Similar photos of {seal.toUpperCase()}</h3>

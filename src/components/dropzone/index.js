@@ -75,7 +75,7 @@ class Dropzone extends Component {
           onChange={this.onFilesAdded}
         />
         <img alt="upload" className="Icon" src="upload.svg" />
-        <span>Click to Upload Image</span>
+        <span>Click to pick your image</span>
       </div>
     );
   }

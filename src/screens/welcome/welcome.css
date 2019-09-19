@@ -22,6 +22,10 @@
   background-size: cover;
 }
 
+.welcome1 .message {
+  text-align: center;
+}
+
 .message {
   text-align: left;
   left: 10vw;
@@ -29,6 +33,7 @@
   position: absolute;
   width: 70%;
   padding-left: 10px;
+  line-height: 22px;
 }
 
 .message h2,

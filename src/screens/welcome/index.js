@@ -9,8 +9,6 @@ class Welcome extends Component {
     this.state = {
       screen: 1
     };
-
-    document.body.requestFullscreen();
   }
 
   selectScreen = screen => {
@@ -24,10 +22,12 @@ class Welcome extends Component {
         <div className="welcome1 h-100">
           <div class="message">
             <h2>Cornwall Seal Group Research Trust</h2>
-            <p>Help us track the seal population throughout Cornwall.</p>
             <p>
-              <img src="" />
+              Upload photos of the seals you've spotted and help us track the
+              seal population throughout Cornwall.
             </p>
+
+            <img src="csg-logo.jpg" alt="Cornwall Seal Group" />
           </div>
           <Route
             render={({ history }) => (
@@ -53,7 +53,7 @@ class Welcome extends Component {
       return (
         <div className="welcome2 h-100">
           <div class="message">
-            <h2>Welcome</h2>
+            <h2>Track Seals</h2>
             <p>
               <b>Upload</b> your seal sightings to help support the Cornwall
               Seal Group Research Trust.
