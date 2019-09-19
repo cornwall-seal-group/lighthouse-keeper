@@ -14,16 +14,16 @@ class Upload extends Component {
       text: "Head Right",
       img: "head-right.svg"
     },
-    // {
-    //   id: "bottling-left",
-    //   text: "Bottling Left",
-    //   img: "Seals_Icons-04.svg"
-    // },
-    // {
-    //   id: "bottling-right",
-    //   text: "Bottling Right",
-    //   img: "Seals_Icons-04.svg"
-    // },
+    {
+      id: "bottling-left",
+      text: "Bottling Left",
+      img: "bottling-left.svg"
+    },
+    {
+      id: "bottling-right",
+      text: "Bottling Right",
+      img: "bottling-right.svg"
+    },
     {
       id: "lying-left",
       text: "Lying left",
@@ -59,13 +59,14 @@ class Upload extends Component {
                   className={`col-5 head-card ${selected}`}
                   onClick={() => this.selectHead(item.id)}
                 >
-                  <h2>{item.text}</h2> <img src={item.img} alt={item.text} />
+                  <h4>{item.text}</h4> <img src={item.img} alt={item.text} />
                 </div>
               );
             })}
           </div>
         </div>
         <Footer
+          primaryButtonDisabled={selectedHead === null}
           primaryButtonText="Next"
           primaryButtonLink={`/upload-image/${selectedHead}`}
         />

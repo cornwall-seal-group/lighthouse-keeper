@@ -88,6 +88,7 @@ class Upload extends Component {
         config: { headers: { "Content-Type": "multipart/form-data" } }
       })
         .then(function(response) {
+          window.location.hash = window.location.hash + "?results=true";
           that.setState({
             results: response.data,
             successfullUploaded: true,
@@ -165,7 +166,7 @@ class Upload extends Component {
         )}
 
         {error && (
-          <div className="d-flex justify-content-center p-4 m-4 bg-danger">
+          <div className="d-flex justify-content-center p-4 m-4 bg-danger text-white">
             {error}
           </div>
         )}
@@ -177,7 +178,7 @@ class Upload extends Component {
         />
         {Object.keys(results).length === 0 && (
           <Footer
-            primaryButtonText="Submit"
+            primaryButtonText="Submit Your Image"
             primaryButtonClickHandler={this.uploadFiles}
             secondaryButtonText="Back"
             secondaryButtonLink={`/pick-angle`}

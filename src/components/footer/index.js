@@ -7,6 +7,7 @@ export default class Footer extends React.Component {
     const {
       primaryButtonText,
       primaryButtonLink,
+      primaryButtonDisabled,
       primaryButtonClickHandler,
       secondaryButtonText,
       secondaryButtonLink,
@@ -41,6 +42,7 @@ export default class Footer extends React.Component {
 
             {primaryButtonClickHandler && (
               <button
+                disabled={primaryButtonDisabled}
                 className={`btn btn-lg btn-seal-primary ${primaryClasses}`}
                 onClick={() => primaryButtonClickHandler()}
               >
@@ -51,6 +53,7 @@ export default class Footer extends React.Component {
               <Route
                 render={({ history }) => (
                   <button
+                    disabled={primaryButtonDisabled}
                     className={`btn btn-lg btn-seal-primary ${primaryClasses}`}
                     onClick={() => history.push(primaryButtonLink)}
                   >
