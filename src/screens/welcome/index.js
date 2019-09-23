@@ -53,36 +53,6 @@ class Welcome extends Component {
       return (
         <div className="welcome2 h-100">
           <div class="message">
-            <h2>Track Seals</h2>
-            <p>
-              <b>Upload</b> your seal sightings to help support the Cornwall
-              Seal Group Research Trust.
-            </p>
-          </div>
-          <Route
-            render={({ history }) => (
-              <button
-                onClick={() => history.push("/pick-angle")}
-                className="btn-lg btn-outline-light bg-transparent welcome-btn welcome-skip"
-              >
-                SKIP
-              </button>
-            )}
-          />
-
-          <button
-            onClick={() => this.selectScreen(3)}
-            className="btn-lg btn-outline-light bg-transparent welcome-btn welcome-next"
-          >
-            NEXT
-          </button>
-        </div>
-      );
-    }
-    if (screen === 3) {
-      return (
-        <div className="welcome3 h-100">
-          <div class="message">
             <h2>Help Us</h2>
             <p>
               Raise awareness about marine life disturbance and limit the impact
@@ -101,7 +71,7 @@ class Welcome extends Component {
             )}
           />
           <button
-            onClick={() => this.selectScreen(4)}
+            onClick={() => this.selectScreen(3)}
             className="btn-lg btn-outline-light bg-transparent welcome-btn welcome-next"
           >
             NEXT
@@ -109,9 +79,9 @@ class Welcome extends Component {
         </div>
       );
     }
-    if (screen === 4) {
+    if (screen === 3) {
       return (
-        <div className="welcome4 h-100">
+        <div className="welcome3 h-100">
           <div class="message">
             <h2>Seal Identification</h2>
             <p>

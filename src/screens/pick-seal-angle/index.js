@@ -56,7 +56,7 @@ class Upload extends Component {
               const selected = selectedHead === item.id ? "selected" : "";
               return (
                 <div
-                  className={`col-5 head-card ${selected}`}
+                  className={`col-5 col-lg-3 head-card ${selected}`}
                   onClick={() => this.selectHead(item.id)}
                 >
                   <h4>{item.text}</h4> <img src={item.img} alt={item.text} />

@@ -16,12 +16,6 @@
   background-size: cover;
 }
 
-.welcome4 {
-  background: url("./images/welcome_1.jpg") no-repeat;
-  background-position: left;
-  background-size: cover;
-}
-
 .welcome1 .message {
   text-align: center;
 }
