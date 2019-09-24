@@ -6,7 +6,12 @@
   height: 25vh;
 }
 
-.head-card.selected {
+.head-card.selected,
+.head-card:hover {
   background-color: rgb(206, 164, 61);
   color: white;
+}
+
+.head-card:hover {
+  background-color: rgb(206, 164, 61, 0.7);
 }
