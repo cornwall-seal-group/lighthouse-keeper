@@ -49,7 +49,7 @@ export default class SealPics extends React.Component {
                 <div className="col-4">
                   <img
                     className="seal-img"
-                    src={`${baseUrl}/minio-images/${seal}/${angle}/${picture}`}
+                    src={`${baseUrl}/seal-images/${seal}/${angle}/${picture}`}
                     alt={picture}
                   />{" "}
                 </div>
